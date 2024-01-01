@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "380417189871",
+    "project_id": "realchat-4d180",
+    "storage_bucket": "realchat-4d180.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:380417189871:android:25fba29caf0e5c39a0f81a",
+        "android_client_info": {
+          "package_name": "com.realchat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6YrY54jhOihXMUrA5izv0rYfTCIdPUwM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
