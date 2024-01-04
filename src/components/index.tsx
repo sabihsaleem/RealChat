@@ -3,6 +3,7 @@ import CustomButton from './CustomButton';
 import CustomImageBackground from './CustomImageBackground';
 import CustomTextInput from './CustomTextInput';
 import CustomText from './CustomText';
+import CustomSelector from './CustomSelector';
 
 export {
   CustomHeader,
@@ -10,4 +11,5 @@ export {
   CustomImageBackground,
   CustomTextInput,
   CustomText,
+  CustomSelector,
 };

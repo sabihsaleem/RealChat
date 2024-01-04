@@ -1,3 +1,30 @@
 {
-  "extends": "@tsconfig/react-native/tsconfig.json"
+  "extends": "@tsconfig/react-native/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "module": "ES2015",
+    "declaration": true,
+    "paths": {
+      "*": ["src/*"],
+      "tests": ["tests/*"],
+      "@components/*": ["src/components/*"]
+    },
+    "target": "ES6",
+    "types": ["react-native", "jest"],
+    "allowJs": true,
+    "noEmit": true,
+    "jsx": "react-native",
+    "strict": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": false,
+    "esModuleInterop": true,
+    "skipLibCheck": true
+  },
+  "exclude": [
+    "node_modules",
+    "babel.config.js",
+    "metro.config.js",
+    "jest.config.js"
+  ]
 }

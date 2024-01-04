@@ -3,8 +3,10 @@ import React from 'react';
 import {TouchableOpacity, Text} from 'react-native';
 import styles from './styles';
 import LinearGradient from 'react-native-linear-gradient';
-import {Colors} from '@common';
-const CustomButton = ({title, onPress}) => {
+import {Colors} from '../../common';
+import {CustomButtonTypes} from 'types';
+
+const CustomButton = ({title, onPress}: CustomButtonTypes) => {
   return (
     <LinearGradient
       colors={[Colors.PrimaryGrayLight, Colors.PrimaryGrayDark]}

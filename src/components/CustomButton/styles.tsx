@@ -17,6 +17,7 @@ export default StyleSheet.create({
     alignSelf: 'center',
     borderRadius: wp('4%'),
   },
+  btnNext:{},
   btnNextText: {
     ...FontSizes.Labels,
     color: Colors.White,

@@ -56,4 +56,5 @@ export default StyleSheet.create({
   },
   socailIconBtnText: {},
   forgotPasword: {},
+  customTextInputContainer: {}
 });

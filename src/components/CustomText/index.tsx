@@ -2,17 +2,13 @@
 import React from 'react';
 import {Text, TouchableOpacity} from 'react-native';
 import styles from './styles';
-import {Colors} from '@common';
+import {Colors} from '../../common';
+import {CustomTextTypes} from 'types';
 
-const CustomText = ({title, onPress, textStyle}) => {
+const CustomText = ({title, onPress, textStyle}: CustomTextTypes) => {
   return (
     <TouchableOpacity style={styles.btnNext} onPress={onPress}>
-      <Text
-        // colors={[Colors.PrimaryGrayLight, Colors.PrimaryGrayDark]}
-
-        style={[textStyle, styles.btnNextText]}>
-        {title}
-      </Text>
+      <Text style={[textStyle, styles.btnNextText]}>{title}</Text>
     </TouchableOpacity>
   );
 };

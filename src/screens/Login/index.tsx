@@ -1,17 +1,25 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {Component} from 'react';
-import {Text, View, Image, TouchableOpacity} from 'react-native';
-import {icons, images} from '@assets';
-import {CustomTextInput, CustomText, CustomButton} from '@components';
+import {
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  ImageSourcePropType,
+} from 'react-native';
+import {icons, images} from '../../assets';
+import {CustomTextInput, CustomText, CustomButton} from '../../components';
 import styles from './styles';
-import {Colors} from '@common';
+import {Colors} from '../../common';
+import {Props} from 'interfaces';
 
-class Login extends Component {
-  constructor(props) {
+class Login extends Component<Props> {
+  constructor(props: Props | Readonly<Props>) {
     super(props);
+    this.state = {};
   }
 
-  socialContainer = (title, source) => {
+  socialContainer = (title: string | number, source: ImageSourcePropType) => {
     return (
       <TouchableOpacity style={[styles.socailIconBtn, styles.row]}>
         <Image source={source} style={styles.socailIcon} />
@@ -53,7 +61,7 @@ class Login extends Component {
     return (
       <CustomText
         title="Forgot Your Password?"
-        customStyles={styles.forgotPasword}
+        textStyle={styles.forgotPasword}
       />
     );
   };

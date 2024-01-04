@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {Colors, FontSizes, Fonts} from '@common';
+import {Colors, FontSizes, Fonts} from '../../common';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,

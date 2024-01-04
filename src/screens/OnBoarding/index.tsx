@@ -1,13 +1,21 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {Component} from 'react';
-import {Image, SafeAreaView, Text, View} from 'react-native';
+import {
+  Image,
+  ImageSourcePropType,
+  SafeAreaView,
+  Text,
+  View,
+} from 'react-native';
 import styles from './styles';
 import Swiper from 'react-native-swiper';
-import {images} from '@assets';
+import {images} from '../../assets';
 import {widthPercentageToDP as wp} from 'react-native-responsive-screen';
-import {CustomButton} from '@components';
-class OnBoarding extends Component {
-  constructor(props) {
+import {CustomButton} from '../../components';
+import {Props, StateProps} from 'interfaces';
+
+class OnBoarding extends Component<Props, StateProps> {
+  constructor(props: Props | Readonly<Props>) {
     super(props);
     this.state = {
       swipeIndex: 0,
@@ -31,7 +39,7 @@ class OnBoarding extends Component {
     };
   }
 
-  onSwipe(swipeIndex) {
+  onSwipe(swipeIndex: number) {
     this.setState({
       swipeIndex,
     });
@@ -47,15 +55,21 @@ class OnBoarding extends Component {
         style={{backgroundColor: 'transparent'}}
         onIndexChanged={index => this.onSwipe(index)}
         loop={false}>
-        {swipeItem?.map(item => {
-          return (
-            <View style={styles.slide1}>
-              <Image style={styles.img} source={item?.swipeImg} />
-              <Text style={[styles.header]}>{item?.header}</Text>
-              <Text style={styles.title}>{item?.title}</Text>
-            </View>
-          );
-        })}
+        {swipeItem?.map(
+          (item: {
+            swipeImg: ImageSourcePropType;
+            header: string;
+            title: string;
+          }) => {
+            return (
+              <View style={styles.slide1}>
+                <Image style={styles.img} source={item?.swipeImg} />
+                <Text style={[styles.header]}>{item?.header}</Text>
+                <Text style={styles.title}>{item?.title}</Text>
+              </View>
+            );
+          },
+        )}
       </Swiper>
     );
   };
@@ -65,7 +79,7 @@ class OnBoarding extends Component {
       <CustomButton
         title="Next"
         onPress={() => {
-          onNext(this.props);
+          this.props?.navigation?.navigate('Login');
         }}
       />
     );
@@ -82,7 +96,3 @@ class OnBoarding extends Component {
 }
 
 export default OnBoarding;
-
-export const onNext = props => {
-  props?.navigation?.navigate('Login');
-};

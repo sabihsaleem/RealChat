@@ -1,18 +1,19 @@
 import React from 'react';
 import {View, TouchableOpacity, Platform, Text, StyleSheet} from 'react-native';
-// import Icon from 'react-native-vector-icons/Ionicons';
-import {Colors, FontSizes} from '@common';
+import Icon from 'react-native-vector-icons/Ionicons';
+import {Colors, FontSizes} from '../../common';
 import DeviceInfo from 'react-native-device-info';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
+import {CustomHeaderTypes} from 'types';
 
 let hasNotch = DeviceInfo.hasNotch();
 
 const CustomHeader = ({
   title = 'Home',
-  leftIconColor = Colors.black,
+  leftIconColor = Colors.Black,
   isLeftIcon = true,
   leftChild,
   onLeftClick,
@@ -21,10 +22,10 @@ const CustomHeader = ({
   rightChild,
   onRightClick,
   rightBtnDisabled,
-  hasSafeArea = false,
+  hasSafeArea,
   content = 'dark-content',
-  bgColorAndroid = Colors.white,
-}) => {
+  bgColorAndroid = Colors.White,
+}: CustomHeaderTypes) => {
   return (
     <View
       style={[
@@ -45,8 +46,7 @@ const CustomHeader = ({
         style={styles.leftSide}
         onPress={onLeftClick}>
         {isLeftIcon ? (
-          // <Icon name="chevron-back" size={30} color={leftIconColor} />
-          <Text>ss</Text>
+          <Icon name="chevron-back" size={30} color={leftIconColor} />
         ) : (
           leftChild
         )}
@@ -59,8 +59,7 @@ const CustomHeader = ({
         style={styles.rightSide}
         onPress={onRightClick}>
         {isRightIcon ? (
-          // <Icon name="chevron-back" size={30} color={leftIconColor} />
-          <Text>ss</Text>
+          <Icon name="chevron-back" size={30} color={leftIconColor} />
         ) : (
           rightChild
         )}
@@ -97,6 +96,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: wp('6%'),
     zIndex: 9999,
   },
+  header: {},
+  center: {},
   body: {
     flexDirection: 'row',
   },

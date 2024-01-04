@@ -20,7 +20,6 @@ export default StyleSheet.create({
     paddingHorizontal: wp('5%'),
     borderRadius: 30,
     ...FontSizes.Regular,
-    color: Colors.BlueCharcoal,
   },
   defaultLeftStyle: {
     width: wp('8%'),

@@ -2,7 +2,14 @@ import React, {Component} from 'react';
 import {Image, View} from 'react-native';
 import styles from './styles';
 import {images} from '../../assets';
-class Splash extends Component {
+import {Props} from 'interfaces';
+
+class Splash extends Component<Props> {
+  constructor(props: Props | Readonly<Props>) {
+    super(props);
+    this.state = {};
+  }
+
   componentDidMount() {
     setTimeout(() => {
       this.props.navigation.navigate('OnBoarding');

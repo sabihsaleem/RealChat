@@ -690,9 +690,6 @@ PODS:
   - Firebase/Database (10.18.0):
     - Firebase/CoreOnly
     - FirebaseDatabase (~> 10.18.0)
-  - Firebase/Firestore (10.18.0):
-    - Firebase/CoreOnly
-    - FirebaseFirestore (~> 10.18.0)
   - FirebaseAnalytics (10.18.0):
     - FirebaseAnalytics/AdIdSupport (= 10.18.0)
     - FirebaseCore (~> 10.0)
@@ -732,11 +729,6 @@ PODS:
     - FirebaseCore (~> 10.0)
     - FirebaseSharedSwift (~> 10.0)
     - leveldb-library (~> 1.22)
-  - FirebaseFirestore (10.18.0):
-    - FirebaseCore (~> 10.0)
-    - FirebaseCoreExtension (~> 10.0)
-    - FirebaseFirestoreInternal (~> 10.17)
-    - FirebaseSharedSwift (~> 10.0)
   - FirebaseFirestoreInternal (10.18.0):
     - abseil/algorithm (~> 1.20220623.0)
     - abseil/base (~> 1.20220623.0)
@@ -1375,11 +1367,6 @@ PODS:
     - Firebase/Database (= 10.18.0)
     - React-Core
     - RNFBApp
-  - RNFBFirestore (18.6.2):
-    - Firebase/Firestore (= 10.18.0)
-    - nanopb (< 2.30910.0, >= 2.30908.0)
-    - React-Core
-    - RNFBApp
   - RNImageCropPicker (0.40.2):
     - React-Core
     - React-RCTImage
@@ -1409,7 +1396,6 @@ DEPENDENCIES:
   - FirebaseCore
   - FirebaseCoreExtension
   - FirebaseDatabase
-  - FirebaseFirestore
   - FirebaseFirestoreInternal
   - Flipper (= 0.182.0)
   - Flipper-Boost-iOSX (= 1.76.0.1.11)
@@ -1477,7 +1463,6 @@ DEPENDENCIES:
   - "RNFBApp (from `../node_modules/@react-native-firebase/app`)"
   - "RNFBAuth (from `../node_modules/@react-native-firebase/auth`)"
   - "RNFBDatabase (from `../node_modules/@react-native-firebase/database`)"
-  - "RNFBFirestore (from `../node_modules/@react-native-firebase/firestore`)"
   - RNImageCropPicker (from `../node_modules/react-native-image-crop-picker`)
   - RNScreens (from `../node_modules/react-native-screens`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
@@ -1497,7 +1482,6 @@ SPEC REPOS:
     - FirebaseCoreExtension
     - FirebaseCoreInternal
     - FirebaseDatabase
-    - FirebaseFirestore
     - FirebaseFirestoreInternal
     - FirebaseInstallations
     - FirebaseSharedSwift
@@ -1617,8 +1601,6 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@react-native-firebase/auth"
   RNFBDatabase:
     :path: "../node_modules/@react-native-firebase/database"
-  RNFBFirestore:
-    :path: "../node_modules/@react-native-firebase/firestore"
   RNImageCropPicker:
     :path: "../node_modules/react-native-image-crop-picker"
   RNScreens:
@@ -1645,7 +1627,6 @@ SPEC CHECKSUMS:
   FirebaseCoreExtension: 62b201498aa10535801cdf3448c7f4db5e24ed80
   FirebaseCoreInternal: 8eb002e564b533bdcf1ba011f33f2b5c10e2ed4a
   FirebaseDatabase: ac770bf7525ff0340b105166037036c0e46c2c7e
-  FirebaseFirestore: 171bcbb57a1a348dd171a0d5e382c03ef85a77bb
   FirebaseFirestoreInternal: 3d5d03f2447caae64311d2cda92abbf4ec5241be
   FirebaseInstallations: e842042ec6ac1fd2e37d7706363ebe7f662afea4
   FirebaseSharedSwift: 62e248642c0582324d0390706cadd314687c116b
@@ -1706,10 +1687,9 @@ SPEC CHECKSUMS:
   ReactCommon: 3ccb8fb14e6b3277e38c73b0ff5e4a1b8db017a9
   RecaptchaInterop: 7d1a4a01a6b2cb1610a47ef3f85f0c411434cb21
   RNDeviceInfo: bf8a32acbcb875f568217285d1793b0e8588c974
-  RNFBApp: 5a4df14a5094dab69fc29049be3cf54af07b0435
-  RNFBAuth: 9682f1015678515f5d3d6ee005a9978905a25810
-  RNFBDatabase: 87e417ad743f4558d6259e6495792e8decbfc2dc
-  RNFBFirestore: deda76d7a90e7519484b591c2d564ce751be3593
+  RNFBApp: 09fd96441b0f556a1ef50ee70fa72160ae71ecb9
+  RNFBAuth: acaa6d305555c99497bb10ab8199a506c4d2481c
+  RNFBDatabase: 7979704b107ba8fffba1b4f4998f97741b61fb16
   RNImageCropPicker: d9616a0cb9b72e8551ff94a7a5021fbd29050aa5
   RNScreens: 3c2d122f5e08c192e254c510b212306da97d2581
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
@@ -1717,6 +1697,6 @@ SPEC CHECKSUMS:
   Yoga: 8796b55dba14d7004f980b54bcc9833ee45b28ce
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: bacffdba142657175ef9b249c907c270c1b02ed0
+PODFILE CHECKSUM: 08f3608dbe5272b1ae7deae77237f291d7ef7baa
 
-COCOAPODS: 1.12.1
+COCOAPODS: 1.14.3

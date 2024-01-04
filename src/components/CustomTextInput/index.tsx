@@ -14,28 +14,29 @@ import {
 import {icons} from '../../assets';
 import {Colors, FontSizes} from '../../common';
 import styles from './styles';
+import {CustomTextInputTypes} from '../../types';
 
 const CustomTextInput = ({
   title = '',
   onChangeText,
-  returnKeyType = null,
-  value = null,
+  returnKeyType,
+  value,
   placeholderTextColor = Colors.LavanderBlosssomGrey,
   isLeft = false,
   leftIconSource = icons.email,
   backgroundColor = Colors.ChefsHat,
   isRight = false,
-  onPressRight = {},
-  onPressLeft = {},
+  onPressRight = () => {},
+  onPressLeft = () => {},
   secureTextEntry = false,
   styleTextInput = {},
   styleRight = {},
   styleLeft = {},
   keyboardType = 'default',
-  maxLength = null,
+  maxLength,
   onSubmitEditing,
   reference,
-}) => {
+}: CustomTextInputTypes) => {
   return (
     <View style={[styles.container, {backgroundColor}]}>
       <View>
