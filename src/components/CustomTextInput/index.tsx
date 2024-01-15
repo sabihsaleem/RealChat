@@ -6,6 +6,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   Platform,
+  Text,
 } from 'react-native';
 import {
   heightPercentageToDP as hp,
@@ -36,45 +37,52 @@ const CustomTextInput = ({
   maxLength,
   onSubmitEditing,
   reference,
+  errorText,
 }: CustomTextInputTypes) => {
   return (
-    <View style={[styles.container, {backgroundColor}]}>
-      <View>
-        {isLeft ? (
-          <TouchableOpacity
-            style={[styles.defaultLeftStyle, styleLeft]}
-            onPress={onPressLeft}>
-            <Image style={styles.sideIcon} source={leftIconSource} />
-          </TouchableOpacity>
-        ) : null}
+    <View style={styles.main}>
+      <View style={[styles.container, {backgroundColor}]}>
+        <View>
+          {isLeft ? (
+            <TouchableOpacity
+              style={[styles.defaultLeftStyle, styleLeft]}
+              onPress={onPressLeft}>
+              <Image style={styles.sideIcon} source={leftIconSource} />
+            </TouchableOpacity>
+          ) : null}
+        </View>
+        <TextInput
+          placeholder={title}
+          placeholderTextColor={placeholderTextColor}
+          onChangeText={onChangeText}
+          value={value}
+          style={[styles.defaultStyle, styleTextInput]}
+          returnKeyType={returnKeyType}
+          secureTextEntry={secureTextEntry}
+          keyboardType={keyboardType}
+          maxLength={maxLength}
+          onSubmitEditing={onSubmitEditing}
+          ref={reference}
+        />
+        <View>
+          {isRight ? (
+            <TouchableOpacity
+              style={[styles.defaultRigthStyle, styleRight]}
+              onPress={onPressRight}>
+              {secureTextEntry ? (
+                <Image style={styles.sideIcon} source={icons.eyeopen} />
+              ) : (
+                <Image style={styles.sideIcon} source={icons.eyeclosed} />
+              )}
+            </TouchableOpacity>
+          ) : null}
+        </View>
       </View>
-      <TextInput
-        placeholder={title}
-        placeholderTextColor={placeholderTextColor}
-        onChangeText={onChangeText}
-        value={value}
-        style={[styles.defaultStyle, styleTextInput]}
-        returnKeyType={returnKeyType}
-        secureTextEntry={secureTextEntry}
-        keyboardType={keyboardType}
-        maxLength={maxLength}
-        onSubmitEditing={onSubmitEditing}
-        ref={reference}
-      />
-      {/* </View> */}
-      <View>
-        {isRight ? (
-          <TouchableOpacity
-            style={[styles.defaultRigthStyle, styleRight]}
-            onPress={onPressRight}>
-            {secureTextEntry ? (
-              <Image style={styles.sideIcon} source={icons.eyeopen} />
-            ) : (
-              <Image style={styles.sideIcon} source={icons.eyeclosed} />
-            )}
-          </TouchableOpacity>
-        ) : null}
-      </View>
+      {errorText ? (
+        <View style={styles.error}>
+          <Text style={styles.errorText}>{errorText}</Text>
+        </View>
+      ) : null}
     </View>
   );
 };

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Image, View} from 'react-native';
 import styles from './styles';
 import {images} from '../../assets';
-import {Props} from 'interfaces';
+import {Props} from '../../interfaces';
 
 class Splash extends Component<Props> {
   constructor(props: Props | Readonly<Props>) {
@@ -12,7 +12,7 @@ class Splash extends Component<Props> {
 
   componentDidMount() {
     setTimeout(() => {
-      this.props.navigation.navigate('OnBoarding');
+      this.props.navigation.navigate('Login');
     }, 1000);
   }
 

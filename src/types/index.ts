@@ -36,6 +36,7 @@ export type CustomTextInputTypes = {
     | ((e: NativeSyntheticEvent<TextInputSubmitEditingEventData>) => void)
     | undefined;
   reference?: React.LegacyRef<TextInput>;
+  errorText?: string;
 };
 
 export type CustomTextTypes = {

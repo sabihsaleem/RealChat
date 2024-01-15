@@ -117,25 +117,28 @@ const Chat = () => {
         <Text onPress={join} style={styles.button}>
           Join
         </Text>
-        <Text onPress={leave} style={styles.button}>
-          Leave
-        </Text>
-
-        <Text onPress={switchCamera} style={styles.button}>
-          Switch Camera
-        </Text>
+        {isJoined && remoteUid !== 0 && (
+          <>
+            <Text onPress={leave} style={styles.button}>
+              Leave
+            </Text>
+            <Text onPress={switchCamera} style={styles.button}>
+              Switch Camera
+            </Text>
+          </>
+        )}
       </View>
       <ScrollView
         style={styles.scroll}
         contentContainerStyle={styles.scrollContainer}>
-        {isJoined ? (
+        {/* {isJoined ? (
           <React.Fragment key={0}>
             <RtcSurfaceView canvas={{uid: 0}} style={styles.videoView} />
             <Text>Local user uid: {uid}</Text>
           </React.Fragment>
         ) : (
           <Text>Join a channel</Text>
-        )}
+        )} */}
         {isJoined && remoteUid !== 0 ? (
           <React.Fragment key={remoteUid}>
             <RtcSurfaceView

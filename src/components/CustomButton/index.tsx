@@ -8,15 +8,15 @@ import {CustomButtonTypes} from 'types';
 
 const CustomButton = ({title, onPress}: CustomButtonTypes) => {
   return (
-    <LinearGradient
-      colors={[Colors.PrimaryGrayLight, Colors.PrimaryGrayDark]}
-      start={{x: 0, y: 0}}
-      end={{x: 1, y: 0}}
-      style={styles.linearGradient}>
-      <TouchableOpacity style={styles.btnNext} onPress={onPress}>
+    <TouchableOpacity style={styles.btnNext} onPress={onPress}>
+      <LinearGradient
+        colors={[Colors.PrimaryGrayLight, Colors.PrimaryGrayDark]}
+        start={{x: 0, y: 0}}
+        end={{x: 1, y: 0}}
+        style={styles.linearGradient}>
         <Text style={styles.btnNextText}>{title}</Text>
-      </TouchableOpacity>
-    </LinearGradient>
+      </LinearGradient>
+    </TouchableOpacity>
   );
 };
 

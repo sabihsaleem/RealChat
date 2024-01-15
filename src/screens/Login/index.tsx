@@ -1,5 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, {Component} from 'react';
+import React, {useState} from 'react';
 import {
   Text,
   View,
@@ -11,15 +11,20 @@ import {icons, images} from '../../assets';
 import {CustomTextInput, CustomText, CustomButton} from '../../components';
 import styles from './styles';
 import {Colors} from '../../common';
-import {Props} from 'interfaces';
+import {Props} from '../../interfaces';
 
-class Login extends Component<Props> {
-  constructor(props: Props | Readonly<Props>) {
-    super(props);
-    this.state = {};
-  }
+const Login = ({navigation}: Props) => {
+  const [email, setEmail] = useState<string | undefined>();
+  const [password, setPassword] = useState<string | undefined>('');
+  const [errorEmailMsg, setErrorEmailMsg] = useState<string | undefined>('');
+  const [errorPasswordMsg, setErrorPasswordMsg] = useState<string | undefined>(
+    '',
+  );
 
-  socialContainer = (title: string | number, source: ImageSourcePropType) => {
+  const socialContainer = (
+    title: string | number,
+    source: ImageSourcePropType,
+  ) => {
     return (
       <TouchableOpacity style={[styles.socailIconBtn, styles.row]}>
         <Image source={source} style={styles.socailIcon} />
@@ -28,7 +33,7 @@ class Login extends Component<Props> {
     );
   };
 
-  imagesContainer = () => {
+  const imagesContainer = () => {
     return (
       <View style={styles.imagesContainer}>
         <Image source={images.logo} style={styles.logo} />
@@ -36,28 +41,42 @@ class Login extends Component<Props> {
     );
   };
 
-  customTextInputContainer = () => {
+  const customTextInputContainer = () => {
     return (
       <View style={styles.customTextInputContainer}>
         <CustomTextInput
-          title={'Email'}
+          title={'Enter Your Email'}
           backgroundColor={Colors.Snow}
           placeholderTextColor={Colors.LavanderBlosssomGrey}
           returnKeyType={'next'}
           isLeft={false}
+          isRight
+          errorText={errorEmailMsg}
+          value={email}
+          onChangeText={text => {
+            setEmail(text);
+            setErrorEmailMsg('');
+          }}
         />
         <CustomTextInput
-          title={'Password'}
+          title={'Enter Your Password'}
           backgroundColor={Colors.Snow}
           placeholderTextColor={Colors.LavanderBlosssomGrey}
           returnKeyType={'next'}
           isLeft={false}
+          isRight
+          errorText={errorPasswordMsg}
+          value={password}
+          onChangeText={text => {
+            setPassword(text);
+            setErrorPasswordMsg('');
+          }}
         />
       </View>
     );
   };
 
-  forgotPassword = () => {
+  const forgotPassword = () => {
     return (
       <CustomText
         title="Forgot Your Password?"
@@ -66,31 +85,33 @@ class Login extends Component<Props> {
     );
   };
 
-  button = () => {
-    return (
-      <CustomButton
-        title="Login"
-        onPress={() => this.props.navigation.navigate('BottomTabs')}
-      />
-    );
+  const onLogin = () => {
+    if (!email?.trim() && !password?.trim()) {
+      setErrorEmailMsg('Email is required');
+      setErrorPasswordMsg('Password is required');
+    } else {
+      navigation.navigate('BottomTabs');
+    }
   };
 
-  render() {
-    return (
-      <View style={styles.main}>
-        {this.imagesContainer()}
-        <Text style={styles.header}>Login To Your Account</Text>
-        {this.customTextInputContainer()}
-        <Text style={styles.contextText}>Or Continue With</Text>
-        <View style={[styles.socialContainer, styles.row]}>
-          {this.socialContainer('Facebook', icons.facebook)}
-          {this.socialContainer('Google', icons.google)}
-        </View>
-        {this.forgotPassword()}
-        {this.button()}
+  const button = () => {
+    return <CustomButton title="Login" onPress={onLogin} />;
+  };
+
+  return (
+    <View style={styles.main}>
+      {imagesContainer()}
+      <Text style={styles.header}>Login To Your Account</Text>
+      {customTextInputContainer()}
+      <Text style={styles.contextText}>Or Continue With</Text>
+      <View style={[styles.socialContainer, styles.row]}>
+        {socialContainer('Facebook', icons.facebook)}
+        {socialContainer('Google', icons.google)}
       </View>
-    );
-  }
-}
+      {forgotPassword()}
+      {button()}
+    </View>
+  );
+};
 
 export default Login;

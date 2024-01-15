@@ -6,13 +6,14 @@ import {
 } from 'react-native-responsive-screen';
 
 export default StyleSheet.create({
+  main: {
+    marginHorizontal: wp('7%'),
+  },
   container: {
     flexDirection: 'row',
     alignItems: 'center',
     marginVertical: hp('1.25%'),
     borderRadius: 10,
-    marginLeft: wp('7%'),
-    marginRight: wp('7%'),
   },
   defaultStyle: {
     flex: 1,
@@ -41,5 +42,11 @@ export default StyleSheet.create({
     width: wp('4%'),
     height: wp('4%'),
     resizeMode: 'contain',
+  },
+  error: {
+    marginVertical: wp('1%'),
+  },
+  errorText: {
+    color: Colors.SilkenRuby,
   },
 });
