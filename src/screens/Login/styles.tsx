@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {Colors, FontSizes, Fonts} from '../../common';
+import {Colors, FontSizes, Fonts, shadows} from '../../common';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -13,7 +13,7 @@ export default StyleSheet.create({
   imagesContainer: {
     alignItems: 'center',
     justifyContent: 'center',
-    marginVertical: wp('15%')
+    marginVertical: wp('15%'),
   },
   logo: {
     resizeMode: 'contain',
@@ -21,13 +21,8 @@ export default StyleSheet.create({
     height: hp('25%'),
   },
   header: {
-    ...FontSizes.ComicNeueMediumXXMedium,
+    ...FontSizes.ComicNeueBoldH24,
     textAlign: 'center',
-  },
-  contextText: {
-    ...FontSizes.RegularRegular,
-    textAlign: 'center',
-    marginVertical: wp('2%')
   },
   row: {
     flexDirection: 'row',
@@ -40,21 +35,25 @@ export default StyleSheet.create({
   socailIconBtn: {
     alignItems: 'center',
     justifyContent: 'center',
-    padding: wp('6%'),
+    height: hp('12%'),
     backgroundColor: Colors.Snow,
-    width: wp('38.5%'),
+    width: wp('78%'),
     borderRadius: wp('4%'),
     borderWidth: 1,
-    borderColor: Colors.White,
+    borderColor: Colors.Snow,
+    ...shadows.shadow3,
+    alignSelf: 'center',
+    marginTop: 'auto',
+    marginBottom: hp('4%')
   },
   socailIcon: {
     width: wp('6.5%'),
     height: wp('6.5%'),
-    resizeMode: 'cover',
+    resizeMode: 'contain',
     marginLeft: wp('3%'),
     marginRight: wp('3%'),
   },
-  socailIconBtnText: {},
-  forgotPasword: {},
-  customTextInputContainer: {}
+  socailIconBtnText: {
+    ...FontSizes.ComicNeueMediumH22
+  },
 });

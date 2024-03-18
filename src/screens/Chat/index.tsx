@@ -16,10 +16,10 @@ import {
 } from 'react-native-agora';
 import styles from './styles';
 
-const appId = '8384eb7b817841228f9a84901d028722';
+const appId = 'bfbf2c6f6ea74153a180b0a0e7670866';
 const channelName = 'RealChat';
 const token =
-  '007eJxTYGC/xHP4jlvhy8jOnr2+CkxMKae08pYqsxT6bvP06lzfVK/AYGFsYZKaZJ5kYWhuYWJoZGSRZploYWJpYJhiYGRhbmQ069rBlIZARoYVhVeYGBkgEMTnYAhKTcxxzkgsYWAAAA+MHro=';
+  '007eJxTYNjpbplnapLwz4Jb7pnbrLIUm3kBc17WSLlz/Pr15V3p+R4FhqS0pDSjZLM0s9REcxNDU+NEQwuDJINEg1RzM3MDCzOzqoCPqQ2BjAy/bxkzMTJAIIjPwRCUmpjjnJFYwsAAANNPIYM=';
 const uid = 0;
 
 const Chat = () => {
