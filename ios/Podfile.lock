@@ -1367,6 +1367,8 @@ PODS:
     - React-logger (= 0.72.3)
     - React-perflogger (= 0.72.3)
   - RecaptchaInterop (100.0.0)
+  - RNCallKeep (3.0.8):
+    - React
   - RNCAsyncStorage (1.22.3):
     - React-Core
   - RNDeviceInfo (10.12.0):
@@ -1482,6 +1484,7 @@ DEPENDENCIES:
   - React-runtimescheduler (from `../node_modules/react-native/ReactCommon/react/renderer/runtimescheduler`)
   - React-utils (from `../node_modules/react-native/ReactCommon/react/utils`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - RNCallKeep (from `../node_modules/react-native-callkeep`)
   - "RNCAsyncStorage (from `../node_modules/@react-native-async-storage/async-storage`)"
   - RNDeviceInfo (from `../node_modules/react-native-device-info`)
   - "RNFBApp (from `../node_modules/@react-native-firebase/app`)"
@@ -1623,6 +1626,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/react/utils"
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  RNCallKeep:
+    :path: "../node_modules/react-native-callkeep"
   RNCAsyncStorage:
     :path: "../node_modules/@react-native-async-storage/async-storage"
   RNDeviceInfo:
@@ -1727,6 +1732,7 @@ SPEC CHECKSUMS:
   React-utils: bcb57da67eec2711f8b353f6e3d33bd8e4b2efa3
   ReactCommon: 3ccb8fb14e6b3277e38c73b0ff5e4a1b8db017a9
   RecaptchaInterop: 7d1a4a01a6b2cb1610a47ef3f85f0c411434cb21
+  RNCallKeep: cfc1353c4806f4b88bf33e3479cf0d68da18e3cb
   RNCAsyncStorage: 10591b9e0a91eaffee14e69b3721009759235125
   RNDeviceInfo: db5c64a060e66e5db3102d041ebe3ef307a85120
   RNFBApp: 5ee688b07ed0fa692a3a8fd07df6d6ae41e4c3a0
@@ -1744,4 +1750,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 08f3608dbe5272b1ae7deae77237f291d7ef7baa
 
-COCOAPODS: 1.14.3
+COCOAPODS: 1.15.2

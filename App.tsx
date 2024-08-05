@@ -20,7 +20,7 @@ import styles from './src/screens/Chat/styles';
 const appId = '8384eb7b817841228f9a84901d028722';
 const channelName = 'RealChat';
 const token =
-  '007eJxTYGC/xHP4jlvhy8jOnr2+CkxMKae08pYqsxT6bvP06lzfVK/AYGFsYZKaZJ5kYWhuYWJoZGSRZploYWJpYJhiYGRhbmQ069rBlIZARoYVhVeYGBkgEMTnYAhKTcxxzkgsYWAAAA+MHro=';
+  '007eJxSYGjyLUiXLA3dJNP5rO6Ed7l7Sf4k8YMZex/1Kyy8xHizyl2BwcLYwiQ1yTzJwtDcwsTQyMgizTLRwsTSwDDFwMjC3Mio+MOGtIZARoaYX2eYGRkYGVgYGBlAfCYwyQwmWcAkB0NQamKOc0ZiCQMDIAAA///SHyLq';
 const uid = 0;
 
 const App = () => {
@@ -145,14 +145,14 @@ const App = () => {
       <ScrollView
         style={styles.scroll}
         contentContainerStyle={styles.scrollContainer}>
-        {/* {isJoined ? (
+        {isJoined ? (
           <React.Fragment key={0}>
             <RtcSurfaceView canvas={{uid: 0}} style={styles.videoView} />
             <Text>Local user uid: {uid}</Text>
           </React.Fragment>
         ) : (
           <Text>Join a channel</Text>
-        )} */}
+        )}
         {isJoined && remoteUid !== 0 ? (
           <React.Fragment key={remoteUid}>
             <RtcSurfaceView
