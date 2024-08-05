@@ -15,7 +15,7 @@ import {
   ChannelProfileType,
 } from 'react-native-agora';
 import RNCallKeep from 'react-native-callkeep';
-import styles from './styles';
+import styles from './src/screens/Chat/styles';
 
 const appId = '8384eb7b817841228f9a84901d028722';
 const channelName = 'RealChat';
